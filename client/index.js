@@ -53,6 +53,7 @@ const updateAlert = () => {
     } else {
     axios.put(`${baseURL}/api/fortune/${dropdown.value}`, {updatedFortune})
     .then(res => {
+        document.getElementById(`newFortune`).value = ""
         updateDropdown()
         alert(res.data)
     })
@@ -66,6 +67,7 @@ const createAlert = () => {
     } else {
     axios.post(`${baseURL}/api/fortune`, {createdFortune})
     .then(res => {
+        document.getElementById(`createdFortune`).value=""
         updateDropdown()
         alert(res.data)
     })
